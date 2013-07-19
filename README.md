@@ -6,7 +6,7 @@ Source of small summary website about Czech (and Slovak) OpenStack community.
 
 Under active development and maintenance.
 
-## License: ISC
+## ISC License
 
 © 2013 [Josef Jezek](http://about.me/josefjezek)
 
