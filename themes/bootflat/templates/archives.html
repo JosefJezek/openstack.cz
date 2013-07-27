@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Archiv - {{ SITENAME }}{% endblock %}
+
+{% block header %}{% set page_title = "Archiv" %}{% include "page_title.html" %}{% endblock %}
+
+{% block message_bottom %}{% include "message_bottom.html" %}{% endblock %}
+
+{% block content %}
+
+{% for year, date_year in dates|groupby( 'date.year' ) %}
+<h3>{{ year }}</h3>
+{% for month, articles in date_year|groupby( 'date.month' ) %}
+<h4>{{ articles[ 0 ].date.strftime( '%B' ) }}</h4>
+<ul>
+{% for article in articles %}
+	<li><a href="{{ article.url }}">{{ article.title }}</a></li>
+{% endfor %}
+</ul>
+{% endfor %}
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}"><head>
+  {% block head %}
+  <meta charset="UTF-8">
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+  <meta name="keywords" content="{% block meta_keywords %}{{ META_KEYWORDS }}{% endblock %}">
+  <meta name="description" content="{% block meta_description %}{{ META_DESCRIPTION }}{% endblock %}">
+  <meta name="author" content="{{ AUTHOR }}">
+  <meta name="viewport" content="width=device-width">
+  
+  <meta property="og:title" content="{% block og_title %}{{ SITENAME }}{% endblock %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ SITEURL }}">
+  <meta property="og:site_name" content="{{ SITENAME }}">
+  <meta property="og:description" content="{% block og_description %}{{ META_DESCRIPTION }}{% endblock %}">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/jquery.bxslider.css">
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/animate.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+  
+
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap-combined.no-icons.min.css">
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css">
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CUSTOM_CSS }}">
+
+  <script src="{{ SITEURL }}/theme/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+  <!-- Fav and touch icons -->
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  {% include "feed.html" %}
+  {% include "analytics.html" %}
+
+  {% endblock head %}
+</head>
+
+<body>
+        
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="{{ SITEURL }}">{{ SITENAME }}</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav pull-right">
+            <li {% if title == active_page %}class="active"{% endif %}><a href="{{ SITEURL }}">Home</a></li>
+            <li {% if blog_on %}class="active"{% endif %}><a href="{{ SITEURL }}/blog.html">Blog</a></li>
+            {% for title, link in MENUITEMS %}
+            <li {% if title == active_page %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ link }}">{{ title }}</a></li>
+            {% endfor %}
+
+            {% if DISPLAY_PAGES_ON_MENU %}
+            {% for p in PAGES %}
+            <li {% if page == p %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+            {% endfor %}
+            {% endif %}
+            <li {% if about_on %}class="active"{% endif %}><a href="{{ SITEURL }}/about.html">O nás</a></li>
+            <li {% if contact_on %}class="active"{% endif %}><a href="{{ SITEURL }}/contact.html">Kontakt</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+
+  {% block header %}{% endblock %}
+
+  {% if blog or article or category or tag or author %}
+  {% include "blog_container.html" %}
+  {% else %}
+  {% block content %}{% endblock %}
+  {% endif %}
+  
+  {% block message_bottom %}{% endblock %}
+
+  <!--Bottom Section-->
+  <section id="bottom">
+    <div class="container">
+      <div class="row margin-40">
+        <div class="span10 offset1 text-center">
+          <p>Stránku vytvořil a spravuje <a href="{{ AUTHOR_LINK }}" target="_blank">{{ AUTHOR }}</a>, ale
+            <a href="{{ GITHUB_URL }}" target="_blank">ruku k dílu můžeš přiložit i ty sám</a>!</p>
+          <p>Chceš tady něco změnit? Pošli <a href="{{ GITHUB_URL }}/pulls" target="_blank">pull request</a>.</p>
+          <p>Máš jenom nápad? Založ <a href="{{ GITHUB_URL }}/issues" target="_blank">issue</a>.</p>
+          <hr>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="span10 offset1 text-center">
+          <!--Social Icons-->          
+          <ul class="social-icons">
+  					<li><a class="twitter" href="http://www.twitter.com/{{ TWITTER_USERNAME }}" target="_blank"><i class="icon-twitter icon-3x"></i></a></li>
+  					<li><a class="facebook" href="http://www.facebook.com" target="_blank"><i class="icon-facebook icon-3x"></i></a></li>
+  					<li><a class="google" href="http://www.googleplus.com" target="_blank"><i class="icon-google-plus icon-3x"></i></a></li>
+  					<li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="icon-camera-retro icon-3x"></i></a></li>
+  					<li><a class="pinterest" href="http://www.pinterest.com" target="_blank"><i class="icon-pinterest icon-3x"></i></a></li>
+  					<li><a class="linkedin" href="http://www.linkedin.com" target="_blank"><i class="icon-linkedin icon-3x"></i></a></li>
+  					<li><a class="Github" href="{{ GITHUB_URL }}" target="_blank"><i class="icon-github-alt icon-3x"></i></a></li>
+  				</ul>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+    
+    
+  <section id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="span12 text-center">
+          <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/cz/" target="_blank"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/cz/88x31.png" /></a><br />Uvedená práce (dílo) podléhá licenci <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/cz/" target="_blank">Creative Commons Uveďte autora-Neužívejte dílo komerčně-Nezasahujte do díla 3.0 Česko</a>.</p>
+          <p>Vytvořil a spravuje <a href="{{ AUTHOR_LINK }}" target="_blank">{{ AUTHOR }}</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Javascript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="{{ SITEURL }}/theme/js/jquery-1.9.1.min.js"><\/script>')</script>
+  <script src="{{ SITEURL }}/theme/js/bootstrap.min.js"></script>
+  <script src="{{ SITEURL }}/theme/js/main.js"></script>
+  <script src="{{ SITEURL }}/theme/js/jquery.bxslider.min.js"></script>
+  
+  <!--BxSlider - Animation options (horizontal, vertical, or fade) For full list of options check out www.bxslider.com -->
+  <script>
+  $(document).ready(function(){
+          $('.bxslider').bxSlider({
+            mode: 'fade',
+            auto: true,
+            pause: 4000,
+            autoHover: false,
+            touchEnabled: true,
+            adaptiveHeight: false,
+            autoControls: false
+          }); 
+  });    
+  </script>
+
+</body>
+</html>

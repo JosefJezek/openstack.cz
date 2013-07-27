@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Štítky - {{ SITENAME }}{% endblock %}
+
+{% block header %}{% set page_title = "Štítky" %}{% include "page_title.html" %}{% endblock %}
+
+{% block message_bottom %}{% include "message_bottom.html" %}{% endblock %}
+
+{% block content %}
+<ul class="inline">
+{% for tag in tag_cloud %}
+	<li class="tag-{{ tag.1 }}"><i class="icon-tag"></i> <a href="{{ SITEURL }}/tag/{{ tag.0|string|replace(" ", "-" ) }}.html">{{ tag.0 }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

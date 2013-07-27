@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title|title }} - {{ SITENAME }}{% endblock %}
+
+{% block header %}{% set page_title = "Blog" %}{% include "page_title.html" %}{% endblock %}
+
+{% block message_bottom %}{% include "message_bottom.html" %}{% endblock %}
+
+{% block content %}
+<article class="blog margin-30">
+  <div class="row-fluid">
+    <div class="span1">
+      <i class="icon-quote-left icon-2x margin-10 blue"></i>
+    </div>
+    
+    <div class="span11">
+      <img src="{{ article.media }}" alt="Post image" />
+      <br />
+      <h3 class="gray">{{ article.title|title }}</h3>
+      <p class="blue"><small><em>{% include "article_metadata.html" %}</em></small></p>
+      <p class="gray">{{ article.content }}</p>
+      <p class="blue"><small><em>{% include "article_tags.html" %}</em></small></p>
+    </div>
+  </div>            
+</article>
+
+{% include "twitter.html" %}
+
+{% if DISQUS_SITENAME %}
+<!--Comments-->
+<h2 class="dark-gray margin-30">Comments</h2>
+{% include "disqus.html" %}
+{% endif %}
+
+{% include "facebook.html" %}
+{% endblock %}
