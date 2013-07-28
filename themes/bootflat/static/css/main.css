@@ -38,7 +38,7 @@ h3 {
   line-height: 35px;
   letter-spacing: -2px;
   font-weight: bold;
-  color: #ffffff;
+  color: #000;
 }
 
 h4 {
@@ -46,7 +46,7 @@ h4 {
   line-height: 35px;
   letter-spacing: -0.7px;
   font-weight: 300;
-  color: #ffffff;
+  color: #000;
 }
 
 a {
@@ -698,7 +698,7 @@ textarea {
    Contact Page Styles
    ========================================================================== */
 #map {
-    height: 265px;
+    height: 300px;
     padding-bottom: 0;
 }
 
@@ -938,7 +938,7 @@ ul.social-icons li a:hover {
    ========================================================================== */
 
 div.sidebar .widget {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .tag-1 {

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-{% block title %}Štítky - {{ SITENAME }}{% endblock %}
+{% block title %}Blog - Štítky - {{ SITENAME }}{% endblock %}
 
-{% block header %}{% set page_title = "Štítky" %}{% include "page_title.html" %}{% endblock %}
+{% block header %}{% set page_title = "Blog - Štítky" %}{% include "page_title.html" %}{% endblock %}
 
 {% block message_bottom %}{% include "message_bottom.html" %}{% endblock %}
 
@@ -11,4 +11,12 @@
 	<li class="tag-{{ tag.1 }}"><i class="icon-tag"></i> <a href="{{ SITEURL }}/tag/{{ tag.0|string|replace(" ", "-" ) }}.html">{{ tag.0 }}</a></li>
 {% endfor %}
 </ul>
+<hr />
+{% if tags %}
+  <ul class="unstyled">
+    {% for (tag, articles) in tags | sort_tags_by_length %}
+      <li><i class="icon-tag"></i> {{ tag }} <a href="{{ SITEURL }}/tag/{{ tag }}"><span class="badge">{{ articles | count }}</span></a></li>
+    {% endfor %}
+  </ul>
+{% endif %}
 {% endblock %}

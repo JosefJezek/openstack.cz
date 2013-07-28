@@ -1,3 +1,4 @@
+{% set blog_on = blog or article or category or tag or author %}
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}"><head>
   {% block head %}
@@ -18,11 +19,11 @@
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/jquery.bxslider.css">
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/font-awesome.min.css">
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/animate.css">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin-ext' rel='stylesheet' type='text/css'>
   
 
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap-combined.no-icons.min.css">
-  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css">
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}">
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CUSTOM_CSS }}">
 
   <script src="{{ SITEURL }}/theme/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -37,7 +38,6 @@
 </head>
 
 <body>
-        
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
@@ -49,7 +49,7 @@
         <a class="brand" href="{{ SITEURL }}">{{ SITENAME }}</a>
         <div class="nav-collapse collapse">
           <ul class="nav pull-right">
-            <li {% if title == active_page %}class="active"{% endif %}><a href="{{ SITEURL }}">Home</a></li>
+            <li {% if home_on %}class="active"{% endif %}><a href="{{ SITEURL }}">Home</a></li>
             <li {% if blog_on %}class="active"{% endif %}><a href="{{ SITEURL }}/blog.html">Blog</a></li>
             {% for title, link in MENUITEMS %}
             <li {% if title == active_page %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ link }}">{{ title }}</a></li>
@@ -70,7 +70,7 @@
 
   {% block header %}{% endblock %}
 
-  {% if blog or article or category or tag or author %}
+  {% if blog_on %}
   {% include "blog_container.html" %}
   {% else %}
   {% block content %}{% endblock %}
@@ -146,5 +146,8 @@
   });    
   </script>
 
+  {% if blog or article %}
+  {% include "widget/disqus_count.html" %}
+  {% endif %}
 </body>
 </html>

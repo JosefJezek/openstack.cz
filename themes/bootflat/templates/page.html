@@ -1,9 +1,16 @@
 {% extends "base.html" %}
+{% block title %}{{ page.title }} - {{ SITENAME }}{% endblock %}
+
+{% block header %}{% set page_title = page.title %}{% include "page_title.html" %}{% endblock %}
+
 {% block content %}
-<div class="span12">
-  <div class='page'>
-    <div class="page-header"><h1>{{ page.title }}</h1></div>
-    <div class="page-content">{{ page.content }}</div>
+<section id="content">
+  <div class="container">
+    <div class="row margin-50">
+      <div class="span12">
+        <p class="gray page-content">{{ page.content }}</p>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 {% endblock %}

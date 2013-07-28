@@ -1,3 +1,16 @@
-<i class="icon-time"></i> <a class="more" href="{{ SITEURL }}/{{ article.url }}">{{ article.date }}</a>
-{% if article.author %}<i class="icon-user"></i> <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a> {% endif %}
+<a href="{{ SITEURL }}/{{ article.url }}" title="{{ article.date.isoformat() }}"><i class="icon-time"></i> {{ article.locale_date }}</a>
+
+{% if article.author %}<i class="icon-user"></i> <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a> {% endif %}
+
 <i class="icon-folder-open"></i> <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+
+{% if PDF_PROCESSOR %}<i class="icon-download"></i> <a href="{{ SITEURL }}/pdf/{{ article.slug }}.pdf">PDF</a>{% endif %}
+
+{% if article.translations %}
+<i class="icon-edit"></i>
+{% for translation in article.translations %}
+<a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>
+{% endfor %}
+{% endif %}
+
+<i class="icon-comments"></i> <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></a>

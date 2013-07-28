@@ -1,61 +1,63 @@
 <!--Column2-->
 <!--Right Side Bar-->
 <div class="sidebar span3">
-	<div class="widget">
-		<form name="google-search" method="get" action="http://www.google.com/search">
-			<input type="hidden" name="sitesearch" value="{{ GOOGLE_SITE_SEARCH_URL }}" />
-			<input class="input-block-level" name="q" type="text" placeholder="Hledat" />
-		</form>
-	</div>
-
-	<div class="widget">
-	  <ul class="unstyled">
-	    {% for name, link in SOCIAL|sort %}
-	    {% set icon_name = name|lower|replace(" ", "-") %}
-	    <li><i class="icon-{{icon_name}}-sign icon-large icon-color-{{icon_name}}"></i> <a href="{{ link }}">{{ name }}</a></li>
-	    {% endfor %}
-	  </ul>
+  <div class="widget">
+    <form name="google-search" method="get" action="http://www.google.com/search">
+      <input type="hidden" name="sitesearch" value="{{ GOOGLE_SITE_SEARCH_URL }}" />
+      <input class="input-block-level" name="q" type="text" placeholder="Hledat" />
+    </form>
   </div>
 
   <div class="widget">
-		<p class="lead">Side Bar Title</p>
-		<p class="gray">Lorem <a href="#">ipsum dolor</a> sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-	</div>
+    <p class="lead">Side Bar Title</p>
+    <p class="gray">Lorem <a href="#">ipsum dolor</a> sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
 
-	<div class="widget">
-		<p class="lead"><i class="icon-folder-open icon-large"></i> Kategorie</p>
-		<ul class="unstyled">
-		  {% for cat, articles in categories %}
-		  <li><span class="badge {% if cat == category %}badge-success{% endif %}">{{ articles|length }}</span> <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-		  {% endfor %}
-		</ul>
-	</div>
+  {% if LINKS|length %}
+  <div class="widget">
+    <p class="lead"><i class="icon-external-link icon-large"></i> Blogroll</p>
+    <ul class="unstyled">
+      {% for name, link in LINKS %}
+      <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
 
-	{% if LINKS|length %}
-	<div class="widget">
-		<p class="lead"><i class="icon-external-link icon-large"></i> Blogroll</p>
-		<ul class="unstyled">
-		  {% for name, link in LINKS %}
-		  <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
-		  {% endfor %}
-		</ul>
-	</div>
-	{% endif %}
+  <div class="widget">
+    <p class="lead"><i class="icon-folder-open icon-large"></i> Kategorie</p>
+    <ul class="unstyled">
+      {% for cat, articles in categories %}
+      <li><span class="badge {% if cat == category %}badge-success{% endif %}">{{ articles|length }}</span> <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
 
-	<div class="widget">
-		<p class="lead"><i class="icon-tags icon-large"></i> Štítky</p>
-		<ul class="inline">
-	    {% for tag in tag_cloud %}
-	    <li class="tag-{{ tag.1 }}"><i class="icon-tag"></i> <a href="{{ SITEURL }}/tag/{{ tag.0|string|replace(" ", "-" ) }}.html">{{ tag.0 }}</a></li>
-	    {% endfor %}
-		</ul>
-	</div>
+  <div class="widget">
+    <p class="lead"><i class="icon-tags icon-large"></i> Štítky</p>
+    <ul class="inline">
+      {% for tag in tag_cloud %}
+      <li class="tag-{{ tag.1 }}"><i class="icon-tag"></i> <a href="{{ SITEURL }}/tag/{{ tag.0|string|replace(" ", "-" ) }}.html">{{ tag.0 }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
 
-	<div class="widget">
-		<p class="lead"><i class="icon-book icon-large"></i> Historie</p>
-		<ul class="unstyled">
-		  <li><i class="icon-book"></i> <a href="{{ SITEURL }}/archives.html">Archiv</a></li>
-		  <li><i class="icon-tags"></i> <a href="{{ SITEURL }}/tags.html">Štítky</a></li>
-		</ul>
-	</div>
+  <div class="widget">
+    <p class="lead"><i class="icon-book icon-large"></i> Historie</p>
+    <ul class="unstyled">
+      <li><i class="icon-book"></i> <a href="{{ SITEURL }}/archives.html">Archiv</a></li>
+      <li><i class="icon-folder-open"></i> <a href="{{ SITEURL }}/categories.html">Kategorie</a></li>
+      <li><i class="icon-tags"></i> <a href="{{ SITEURL }}/tags.html">Štítky</a></li>
+    </ul>
+  </div>
+
+  <div class="widget">
+    <p class="lead"><i class="icon-cloud icon-large"></i> Social</p> 
+    <ul class="unstyled">
+      {% for name, link in SOCIAL|sort %}
+      {% set icon_name = name|lower|replace(" ", "-") %}
+      <li><i class="icon-{{icon_name}}-sign icon-large icon-color-{{icon_name}}"></i> <a href="{{ link }}">{{ name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
 </div><!--Side Bar-->

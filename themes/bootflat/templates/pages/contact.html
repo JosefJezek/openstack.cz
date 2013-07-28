@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% set contact_on = True %}
+{% block title %}Kontakt - {{ SITENAME }}{% endblock %}
+
+{% block header %}{% set page_title = "Kontakt" %}{% include "page_title.html" %}{% endblock %}
+
+{% block content %}
+<!--Content Section-->
+<section id="content">
+  <div class="container">
+    
+    <div class="row">
+      <div class="span8">        
+        {% include "widget/contact_form.html" %}
+      </div><!--End Span8-->
+      
+      <div class="span4">
+        <p class="lead">Side Bar Title<p>
+  				<p class="gray">Lorem <a href="#">ipsum dolor</a> sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      
+    </div><!--End Row-->   
+  </div>
+</section> 
+
+
+<!--Map Section-->
+<section id="map">
+
+  {% include "widget/map.html" %}
+  
+</section>
+{% endblock %}

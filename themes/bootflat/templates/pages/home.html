@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% set home_on = True %}
+{% block header %}{% include "slider.html" %}{% endblock %}
+
+{% block message_bottom %}{% include "message_bottom.html" %}{% endblock %}
+
+{% block content %}
+<!--Home Content-->
+<section id="home-content">
+  <div class="container">
+    <div class="row">
+      
+      <!--Section 1-->
+      <a href="#">
+        <div class="span4 text-center home-box">
+          <i class="icon-mobile-phone icon-3x"></i>
+          <h3>Mobile Responsive</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a mauris dui. Nam eu risus neque, sed blandit ante. Integer eget massa.</p>
+        </div>
+      </a>
+      
+      <!--Section 2-->
+      <a href="#">
+        <div class="span4 text-center home-box">
+          <i class="icon-thumbs-up icon-3x"></i>
+          <h3>Built With Bootstrap</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a mauris dui. Nam eu risus neque, sed blandit ante. Integer eget massa.</p>
+        </div>
+      </a>
+      
+      <!--Section 3-->
+      <a href="#">
+        <div class="span4 text-center home-box">
+          <i class="icon-flag icon-3x"></i>
+          <h3>Over 249 Icons</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a mauris dui. Nam eu risus neque, sed blandit ante. Integer eget massa.</p>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+</section>
+
+
+<!--Content Section-->
+<section id="content">
+  <div class="container">
+    <div class="row margin-50">
+      <div class="span12 text-center">
+          <ul class="inline home-icons">
+            <li><a href="#"><i class="icon-rocket icon-4x blue"></i></a></li>
+            <li><a href="#"><i class="icon-heart icon-4x blue"></i></a></li>
+            <li><a href="#"><i class="icon-truck icon-4x blue"></i></a></li>
+            <li><a href="#"><i class="icon-cogs icon-4x blue"></i></a></li>
+            <li><a href="#"><i class="icon-lock icon-4x blue"></i></a></li>
+            <li><a href="#"><i class="icon-check icon-4x blue"></i></a></li>
+          </ul>
+      </div>
+    </div>
+    
+    <div class="row margin-30">
+      <div class="span8 text-center offset2">
+        <h1 class="dark-gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+      </div>
+    </div>
+    
+    <div class="row margin-30">
+      <div class="span6">
+        <p class="gray">Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br />          
+      </div>
+      
+      <div class="span6">
+        <p class="gray">Lorem ipsum dolor sit amet, eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br />          
+      </div>
+    </div><!--End Row-->
+    
+    <div class="row">
+      <div class="span12 text-center">
+        <a class="btn-main" href="{{ SITEURL }}/contact.html">Kontaktujte nás</a>       
+      </div>
+    </div><!--End Row-->
+    
+  </div>
+</section> 
+
+
+<!--Clients Section-->
+<section id="clients">
+  <div class="container">
+    
+    <div class="row clients text-center">
+      
+      <!--Insert Client Logos Below-->
+      <div class="span2">
+        <a href="#"><img src="{{ SITEURL }}/theme/img/clients-01.png" alt="Title"></a>
+      </div>
+      
+      <div class="span2">
+        <a href="#"><img src="{{ SITEURL }}/theme/img/clients-02.png" alt="Title"></a>
+      </div>
+      
+      <div class="span2">
+        <a href="#"><img src="{{ SITEURL }}/theme/img/clients-03.png" alt="Title"></a>
+      </div>
+      
+      <div class="span2">
+        <a href="#"><img src="{{ SITEURL }}/theme/img/clients-04.png" alt="Title"></a>
+      </div>
+      
+      <div class="span2">
+        <a href="#"><img src="{{ SITEURL }}/theme/img/clients-01.png" alt="Title"></a>
+      </div>
+      
+      <div class="span2">
+        <a href="#"><img src="{{ SITEURL }}/theme/img/clients-04.png" alt="Title"></a>
+      </div>
+      
+    </div>
+  </div>
+</section>
+{% endblock %}

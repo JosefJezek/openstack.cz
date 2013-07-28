@@ -1,2 +1,3 @@
 {% extends "blog.html" %}
-{% block title %}Štítek {{ tag }} - {{ SITENAME }}{% endblock %}
+{% block title %}Blog - Štítek {{ tag }} - {{ SITENAME }}{% endblock %}
+{% block header %}{% set page_title = "Blog - Štítek " + tag.name %}{% include "page_title.html" %}{% endblock %}

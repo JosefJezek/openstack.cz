@@ -1,7 +1,8 @@
 {% extends "base.html" %}
-{% block title %}{{ article.title|title }} - {{ SITENAME }}{% endblock %}
+{% block title %}Blog - {{ article.title|title }} - {{ SITENAME }}{% endblock %}
+{% block meta_description %}{{ article.summary }}{% endblock %}
 
-{% block header %}{% set page_title = "Blog" %}{% include "page_title.html" %}{% endblock %}
+{% block header %}{% set page_title = "Blog - " + article.title|title %}{% include "page_title.html" %}{% endblock %}
 
 {% block message_bottom %}{% include "message_bottom.html" %}{% endblock %}
 
@@ -13,7 +14,7 @@
     </div>
     
     <div class="span11">
-      <img src="{{ article.media }}" alt="Post image" />
+      {% include "article_media.html" %}
       <br />
       <h3 class="gray">{{ article.title|title }}</h3>
       <p class="blue"><small><em>{% include "article_metadata.html" %}</em></small></p>
@@ -23,13 +24,13 @@
   </div>            
 </article>
 
-{% include "twitter.html" %}
+{% include "widget/twitter.html" %}
 
 {% if DISQUS_SITENAME %}
 <!--Comments-->
-<h2 class="dark-gray margin-30">Comments</h2>
-{% include "disqus.html" %}
+<h2 class="dark-gray margin-30"><i class="icon-comments icon-large"></i> Komentáře</h2>
+{% include "widget/disqus.html" %}
 {% endif %}
 
-{% include "facebook.html" %}
+{% include "widget/facebook.html" %}
 {% endblock %}

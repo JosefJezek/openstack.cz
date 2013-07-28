@@ -1,0 +1,9 @@
+{% if article.media and article.media_type %}
+
+{% if article.media_type == "image" %}
+<img src="{{ article.media|media_url(SITEURL) }}" alt="Post image" />
+{% elif article.media_type == "youtube" %}
+<iframe width="640" height="360" src="//www.youtube.com/embed/{{ article.media }}" frameborder="0" allowfullscreen></iframe>
+{% endif %}
+
+{% endif %}

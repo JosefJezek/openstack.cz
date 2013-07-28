@@ -6,8 +6,23 @@ SITENAME = u'OpenStack'
 SITEURL = 'http://openstack.cz'
 DOMAIN = 'openstack.cz'
 TIMEZONE = 'Europe/Prague'
-LOCALE = 'cs_CZ.UTF-8'
+LOCALE = ( # http://docs.getpelican.com/en/latest/settings.html#date-format-and-locale
+    'usa', 'cze',           # On Windows
+    'en_US', 'cs_CZ.UTF-8', # On Unix/Linux
+)
 DEFAULT_LANG = 'cs'
+
+# On Unix/Linux
+DATE_FORMATS = {
+    'en': ('en_US','%a, %d %b %Y'),
+    'cs': ('cs_CZ.UTF-8','%a %d. %B %Y - %H:%M'),
+}
+
+# On Windows
+#DATE_FORMATS = {
+#    'en': ('usa','%a, %d %b %Y'),
+#    'cs': ('cze','%Y-%m-%d(%a)'),
+#}
 
 # can be useful in development, but set to False when you're ready to publish
 RELATIVE_URLS = True
@@ -34,6 +49,7 @@ SOCIAL = (
 )
 
 THEME = 'themes/bootflat'
+CSS_FILE = 'main.css'
 CUSTOM_CSS = 'custom.css'
 META_KEYWORDS = 'openstack, cloud, linux, ubuntu, red hat'
 META_DESCRIPTION = u'Česká (a slovenská) komunita kolem svobodné technologie OpenStack pro provoz cloudů typu IaaS (infrastruktura jako služba).'
@@ -42,20 +58,15 @@ DISPLAY_PAGES_ON_MENU = True
 GOOGLE_SITE_SEARCH_URL = SITEURL
 CONTACT_MAP_LOCATION='Praha,+Czech'
 
-
 # custom home page
-DIRECT_TEMPLATES = (('index', 'blog', 'tags', 'categories', 'archives'))
+DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'blog'))
 PAGINATED_DIRECT_TEMPLATES = (('blog',))
-TEMPLATE_PAGES = {
-    'home.html': 'index.html',
-}
-
 # custom page generated with a jinja2 template
 TEMPLATE_PAGES = {
-    'contact.html': 'contact.html',
-    'about.html': 'about.html',
+    'pages/home.html': 'index.html',
+    'pages/contact.html': 'contact.html',
+    'pages/about.html': 'about.html',
 }
-
 
 OUTPUT_PATH = 'output'
 PATH = 'content'
@@ -75,3 +86,23 @@ FILES_TO_COPY = (
     ('extra/robots.txt', 'robots.txt'),
     ('extra/CNAME', 'CNAME'),
 )
+
+
+# Custom functions available to all templates:
+from operator import itemgetter
+import re
+
+def sort_tags_by_length(tags):
+    return sorted(tags, key=lambda tup: len(tup[1]), reverse=True)
+
+def media_url(url, site_root):
+    if re.match('^https?://', url, re.IGNORECASE):
+        return url
+    else:
+        return '%s/static/images/%s' %(site_root, url)
+
+
+JINJA_FILTERS = {
+    'sort_tags_by_length': sort_tags_by_length,
+    'media_url': media_url,
+}
