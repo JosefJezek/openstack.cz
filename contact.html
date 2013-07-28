@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="./theme/css/jquery.bxslider.css">
   <link rel="stylesheet" href="./theme/css/font-awesome.min.css">
   <link rel="stylesheet" href="./theme/css/animate.css">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin-ext' rel='stylesheet' type='text/css'>
   
 
   <link rel="stylesheet" href="./theme/css/bootstrap-combined.no-icons.min.css">
@@ -46,7 +46,6 @@
   </head>
 
 <body>
-        
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
@@ -62,7 +61,7 @@
             <li ><a href="./blog.html">Blog</a></li>
             
                                                 <li ><a href="./about.html">O nás</a></li>
-            <li ><a href="./contact.html">Kontakt</a></li>
+            <li class="active"><a href="./contact.html">Kontakt</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -86,14 +85,13 @@
     <div class="row">
       <div class="span8">        
         <form method="POST" action="/">
-          <input type="text" class="span8" name="contact_name" placeholder="Jméno">
-          <input type="text" class="span8" name="contact_email" placeholder="E-mail">
-          <input type="text" class="span8" name="contact_subject" placeholder="Předmět">
-          <textarea class="span8" name="contact_message" placeholder="Zpráva"></textarea>
-          <input type="hidden" name="save" value="contact">
-          <p><button class="btn-main" type="submit">Odeslat</button></p>
-        </form>
-      </div><!--End Span8-->
+  <input type="text" class="span8" name="contact_name" placeholder="Jméno">
+  <input type="text" class="span8" name="contact_email" placeholder="E-mail">
+  <input type="text" class="span8" name="contact_subject" placeholder="Předmět">
+  <textarea class="span8" name="contact_message" placeholder="Zpráva"></textarea>
+  <input type="hidden" name="save" value="contact">
+  <p><button class="btn-main" type="submit">Odeslat</button></p>
+</form>      </div><!--End Span8-->
       
       <div class="span4">
         <p class="lead">Side Bar Title<p>
@@ -115,14 +113,14 @@ src="https://maps.google.com/maps?f=q
 &amp;geocode=
 &amp;q=Praha,+Czech
 &amp;aq=
-&amp;sll=37.0625,-95.677068
-&amp;sspn=59.249168,126.5625
+&amp;sll=
+&amp;sspn=
 &amp;t=m
 &amp;ie=UTF8
 &amp;hq=
-&amp;hnear=
-&amp;ll=35.782171,-78.656616
-&amp;spn=0.066845,0.109863
+&amp;hnear=Praha,+Czech
+&amp;ll=
+&amp;spn=
 &amp;z=13
 &amp;iwloc=A
 &amp;output=embed">
@@ -198,5 +196,5 @@ src="https://maps.google.com/maps?f=q
   });    
   </script>
 
-</body>
+  </body>
 </html>
