@@ -9,22 +9,23 @@
   
   <meta property="og:title" content="OpenStack">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="../../../..">
+  <meta property="og:url" content="http://openstack.cz">
   <meta property="og:site_name" content="OpenStack">
   <meta property="og:description" content="Česká (a slovenská) komunita kolem svobodné technologie OpenStack pro provoz cloudů typu IaaS (infrastruktura jako služba).">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="../../../../theme/css/jquery.bxslider.css">
-  <link rel="stylesheet" href="../../../../theme/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../../../../theme/css/animate.css">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin-ext' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://openstack.cz/theme/css/jquery.bxslider.css">
+  <link rel="stylesheet" href="http://openstack.cz/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://openstack.cz/theme/css/animate.css">
+  <link rel="stylesheet" href="http://openstack.cz/theme/css/camera.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&amp;subset=latin-ext' rel='stylesheet' type='text/css'>
   
 
-  <link rel="stylesheet" href="../../../../theme/css/bootstrap-combined.no-icons.min.css">
-  <link rel="stylesheet" href="../../../../theme/css/main.css">
-  <link rel="stylesheet" href="../../../../theme/css/custom.css">
+  <link rel="stylesheet" href="http://openstack.cz/theme/css/bootstrap-combined.no-icons.min.css">
+  <link rel="stylesheet" href="http://openstack.cz/theme/css/main.css">
+  <link rel="stylesheet" href="http://openstack.cz/theme/css/custom.css">
 
-  <script src="../../../../theme/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  <script src="http://openstack.cz/theme/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
   <!-- Fav and touch icons -->
   <link rel="shortcut icon" href="/favicon.ico">
@@ -56,14 +57,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="../../../..">OpenStack</a>
+        <a class="brand" href="http://openstack.cz">OpenStack</a>
         <div class="nav-collapse collapse">
           <ul class="nav pull-right">
-            <li ><a href="../../../..">Home</a></li>
-            <li class="active"><a href="../../../../blog.html">Blog</a></li>
+            <li ><a href="http://openstack.cz">Home</a></li>
+            <li class="active"><a href="http://openstack.cz/blog.html">Blog</a></li>
             
-                                                <li ><a href="../../../../about.html">O nás</a></li>
-            <li ><a href="../../../../contact.html">Kontakt</a></li>
+                                                <li ><a href="http://openstack.cz/about.html">O nás</a></li>
+            <li ><a href="http://openstack.cz/contact.html">Kontakt</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -95,20 +96,46 @@
     
     <div class="span11">
       
-<img src="../../../../static/images/openstack.jpg" alt="Post image" />
+<img src="http://openstack.cz/static/images/openstack.jpg" alt="Post image" />
 
       <br />
       <h3 class="gray">Welcome All</h3>
-      <p class="blue"><small><em><a href="../../../../posts/2013/07/welcome-all/" title="2013-07-22T19:19:00"><i class="icon-time"></i> Po 22. červenec 2013 - 19:19</a>
+      <div><ul class="inline blue">
+  <li><small><a href="http://openstack.cz/posts/2013/07/welcome-all/" title="2013-07-22T19:19:00"><i class="icon-time"></i> Po 22. čec 2013 19:19</a></small></li>
 
-<i class="icon-user"></i> <a href="../../../../author/josef-jezek.html">Josef Jezek</a> 
-<i class="icon-folder-open"></i> <a href="../../../../category/python.html">Python</a>
+  <li><small><i class="icon-user"></i> <a href="http://openstack.cz/author/josef-jezek.html">Josef Jezek</a></small></li>
+  <li><small><i class="icon-folder-open"></i> <a href="http://openstack.cz/category/python.html">Python</a></small></li>
+
+  
+  <li><small><i class="icon-download"></i> <a href="http://openstack.cz/posts/2013/07/welcome-all/index.txt" title="Zdroj ve formátu Markdown">Zdroj</a></small></li>
+  
+  <li><small><i class="icon-comments"></i> <a href="http://openstack.cz/posts/2013/07/welcome-all/#disqus_thread"></a></small></li></ul></div>
+      <div class="gray article-content"><h1>How to install environment</h1>
+<h2>Install Pelican on Ubuntu</h2>
+<h3>Installing Python tools</h3>
+<div class="codehilite"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">setuptools</span> <span class="n">inotify</span><span class="o">-</span><span class="n">tools</span>
+<span class="n">sudo</span> <span class="n">easy_install</span> <span class="n">pip</span>
+<span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenv</span> <span class="n">virtualenvwrapper</span>
+</pre></div>
 
 
+<p><code>vi ~/.bashrc</code> (maybe <code>virtualenvwrapper.sh</code> is in other location, change if necessary)</p>
+<div class="codehilite"><pre><span class="c"># Virtualenvwrapper</span>
+<span class="nb">export </span><span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+<span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
+</pre></div>
 
-<i class="icon-comments"></i> <a href="../../../../posts/2013/07/welcome-all/#disqus_thread"></a></em></small></p>
-      <p class="gray"><p>This is the content of my blog post.</p></p>
-      <p class="blue"><small><em><i class="icon-tags"></i> <a href="../../../../tag/pelican.html">pelican</a> <a href="../../../../tag/publishing.html">publishing</a> </em></small></p>
+
+<p>Load file <code>.bashrc</code></p>
+<div class="codehilite"><pre><span class="n">source</span> <span class="o">~/</span><span class="p">.</span><span class="n">bashrc</span>
+</pre></div>
+
+
+<p>Create <a href="http://www.virtualenv.org/en/latest/">virtualenv</a> with <a href="http://www.doughellmann.com/projects/virtualenvwrapper/">virtualenvwrapper</a></p>
+<div class="codehilite"><pre><span class="n">mkvirtualenv</span> <span class="n">blog</span>
+<span class="n">workon</span> <span class="n">blog</span>
+</pre></div></div>
+      <div><ul class="inline blue"><i class="icon-tags"></i><li><small><a href="http://openstack.cz/tag/pelican.html">pelican</a></small></li><li><small><a href="http://openstack.cz/tag/publishing.html">publishing</a></small></li></ul></div>
     </div>
   </div>            
 </article>
@@ -155,26 +182,26 @@
   <div class="widget">
     <p class="lead"><i class="icon-folder-open icon-large"></i> Kategorie</p>
     <ul class="unstyled">
-            <li><span class="badge ">1</span> <a href="../../../../category/video.html">Video</a></li>
-            <li><span class="badge badge-success">1</span> <a href="../../../../category/python.html">Python</a></li>
+            <li><span class="badge ">1</span> <a href="http://openstack.cz/category/video.html">Video</a></li>
+            <li><span class="badge badge-success">1</span> <a href="http://openstack.cz/category/python.html">Python</a></li>
           </ul>
   </div>
 
   <div class="widget">
     <p class="lead"><i class="icon-tags icon-large"></i> Štítky</p>
     <ul class="inline">
-            <li class="tag-4"><i class="icon-tag"></i> <a href="../../../../tag/publishing.html">publishing</a></li>
-            <li class="tag-4"><i class="icon-tag"></i> <a href="../../../../tag/ubuntu.html">ubuntu</a></li>
-            <li class="tag-4"><i class="icon-tag"></i> <a href="../../../../tag/pelican.html">pelican</a></li>
+            <li class="tag-4"><i class="icon-tag"></i> <a href="http://openstack.cz/tag/pelican.html">pelican</a></li>
+            <li class="tag-4"><i class="icon-tag"></i> <a href="http://openstack.cz/tag/publishing.html">publishing</a></li>
+            <li class="tag-4"><i class="icon-tag"></i> <a href="http://openstack.cz/tag/ubuntu.html">ubuntu</a></li>
           </ul>
   </div>
 
   <div class="widget">
     <p class="lead"><i class="icon-book icon-large"></i> Historie</p>
     <ul class="unstyled">
-      <li><i class="icon-book"></i> <a href="../../../../archives.html">Archiv</a></li>
-      <li><i class="icon-folder-open"></i> <a href="../../../../categories.html">Kategorie</a></li>
-      <li><i class="icon-tags"></i> <a href="../../../../tags.html">Štítky</a></li>
+      <li><i class="icon-book"></i> <a href="http://openstack.cz/archives.html">Archiv</a></li>
+      <li><i class="icon-folder-open"></i> <a href="http://openstack.cz/categories.html">Kategorie</a></li>
+      <li><i class="icon-tags"></i> <a href="http://openstack.cz/tags.html">Štítky</a></li>
     </ul>
   </div>
 
@@ -246,11 +273,15 @@
   <!-- Javascript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="../../../../theme/js/jquery-1.9.1.min.js"><\/script>')</script>
-  <script src="../../../../theme/js/bootstrap.min.js"></script>
-  <script src="../../../../theme/js/main.js"></script>
-  <script src="../../../../theme/js/jquery.bxslider.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="http://openstack.cz/theme/js/jquery-1.8.3.min.js"><\/script>')</script>
+  <script src="http://openstack.cz/theme/js/jquery.easing.1.3.js"></script>
+  <script src="http://openstack.cz/theme/js/bootstrap.min.js"></script>
+  <script src="http://openstack.cz/theme/js/main.js"></script>
+  <script src="http://openstack.cz/theme/js/jquery.mobile.customized.min.js"></script>
+  <script src="http://openstack.cz/theme/js/camera.min.js"></script>
+  <script src="http://openstack.cz/theme/js/camera-settings.js"></script>
+  <script src="http://openstack.cz/theme/js/jquery.bxslider.min.js"></script>
   
   <!--BxSlider - Animation options (horizontal, vertical, or fade) For full list of options check out www.bxslider.com -->
   <script>
