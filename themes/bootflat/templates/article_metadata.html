@@ -1,16 +1,21 @@
-<a href="{{ SITEURL }}/{{ article.url }}" title="{{ article.date.isoformat() }}"><i class="icon-time"></i> {{ article.locale_date }}</a>
+<ul class="inline blue">
+  <li><small><a href="{{ SITEURL }}/{{ article.url }}" title="{{ article.date.isoformat() }}"><i class="icon-time"></i> {{ article.locale_date }}</a></small></li>
 
-{% if article.author %}<i class="icon-user"></i> <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a> {% endif %}
+  {% if article.author %}<li><small><i class="icon-user"></i> <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a></small></li>{% endif %}
 
-<i class="icon-folder-open"></i> <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+  <li><small><i class="icon-folder-open"></i> <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></small></li>
 
-{% if PDF_PROCESSOR %}<i class="icon-download"></i> <a href="{{ SITEURL }}/pdf/{{ article.slug }}.pdf">PDF</a>{% endif %}
+  {% if PDF_PROCESSOR %}<li><small><i class="icon-download"></i> <a href="{{ SITEURL }}/pdf/{{ article.slug }}.pdf">PDF</a></small></li>{% endif %}
 
-{% if article.translations %}
-<i class="icon-edit"></i>
-{% for translation in article.translations %}
-<a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>
-{% endfor %}
-{% endif %}
+  {% if OUTPUT_SOURCES %}<li><small><i class="icon-download"></i> <a href="{{ SITEURL }}/{{ article.url }}index.txt" title="Zdroj ve formátu Markdown">Zdroj</a></small></li>{% endif %}
 
-<i class="icon-comments"></i> <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></a>
+  {% if article.translations %}
+  <li><small><i class="icon-edit"></i>&nbsp;
+  {% for translation in article.translations %}
+  <a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>&nbsp;
+  {% endfor %}
+  </small></li>
+  {% endif %}
+
+  {% if DISQUS_SITENAME %}<li><small><i class="icon-comments"></i> <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></a></small></li>{% endif %}
+</ul>

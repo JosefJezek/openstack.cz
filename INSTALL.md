@@ -5,7 +5,7 @@
 ### Installing Python tools
 
 ```
-sudo apt-get install python-setuptools
+sudo apt-get install python-setuptools inotify-tools
 sudo easy_install pip
 sudo pip install virtualenv virtualenvwrapper
 ```
@@ -72,16 +72,8 @@ cd openstack.cz
 
 ### Create own settings file called settings_local.py
 
-This file will not be commited to the git repository.
+This file will not be commited to the git repository. Variables inside file being processed with Shovel by create post or page.
 
 ```
 cp settings.py settings_local.py
 ```
-
-Change this variable
-
-```
-AUTHOR = u'Josef Ježek'
-```
-
-The name of the author being processed by create post or page.

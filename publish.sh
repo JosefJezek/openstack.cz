@@ -6,17 +6,11 @@
 
 MESSAGE=$1
 
-if [ -f pelicanconf_local.py ]; then
-	CONF=pelicanconf_local.py
-else
-	CONF=pelicanconf.py
-fi
-
 git checkout master
 git add .
 git commit -m "$MESSAGE"
 git push origin master
 
 rm -rf output
-pelican -s $CONF
+pelican -s publishconf.py
 ghp-import -pm "$MESSAGE" output

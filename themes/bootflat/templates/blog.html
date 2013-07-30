@@ -19,9 +19,9 @@
       <a href="{{ SITEURL }}/{{ article.url }}">{% include "article_media.html" %}</a>
       <br/>
       <h3 class="gray"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title|title }}</a></h3>
-      <p class="blue"><small><em>{% include "article_metadata.html" %}</em></small></p>
-      <p class="gray">{{ article.summary }}</p>
-      <p class="blue"><small><em>{% include "article_tags.html" %}</em></small></p>
+      <div>{% include "article_metadata.html" %}</div>
+      <div class="gray">{{ article.summary }}</div>
+      <div>{% include "article_tags.html" %}</div>
       <br />
       <a class="btn-main" href="{{ SITEURL }}/{{ article.url }}">Více</a>
     </div>

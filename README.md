@@ -1,4 +1,4 @@
-# openstack.cz
+# openstack.cz [![Gittip](https://raw.github.com/gittip/www.gittip.com/master/img-src/gittip-logo-32.png)](https://www.gittip.com/josefjezek)
 
 Source of small summary website about Czech (and Slovak) OpenStack community.
 
@@ -7,6 +7,8 @@ Source of small summary website about Czech (and Slovak) OpenStack community.
 Under active development and maintenance.
 
 ## How to Commit content
+
+[How to use Markdown](https://gist.github.com/5917040)
 
 ### Prepare environment for Pelican
 
@@ -78,4 +80,4 @@ This work is licensed under a [Creative Commons Attribution-NonCommercial-NoDeri
 
 Uvedená práce (dílo) podléhá licenci [Creative Commons Uveďte autora-Neužívejte dílo komerčně-Nezasahujte do díla 3.0 Česko](http://creativecommons.org/licenses/by-nc-nd/3.0/cz/).
 
-Static blog powered by [Pelican](http://docs.getpelican.com) on [GitHub Pages](http://pages.github.com).
+Static blog powered by [Pelican](http://docs.getpelican.com), which takes great advantage of [Python](http://python.org). Hosted on [GitHub Pages](http://pages.github.com).

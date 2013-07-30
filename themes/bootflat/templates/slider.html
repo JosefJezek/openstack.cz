@@ -1,32 +1,70 @@
 <!--Header Section-->
 <section id="header">
-  <div class="container">
-    <div class="row">
-      <div class="span12">
-        
-        <ul class="bxslider">
-          <li>
-            <img src="{{ SITEURL }}/theme/img/header1.png" alt="Title" />
-            <div class="row text-center">
-              <div class="span10 offset1">
-              <h1>Welcome to Sharkfin, an incredibly unique web and mobile experience for your users.</h1><br />
-              <a class="btn-main" href="about.html">Learn More</a>
+  <!-- slideshow start here -->
+  <div id="slider-wrapper">
+    <div class="camera_wrap" id="camera-slide">
+    
+      <!-- slide 1 here -->
+      <div  data-src="{{ SITEURL }}/static/images/slides/home-header/slide1/background1.jpg">
+        <div class="camera_caption fadeFromLeft">
+          <div class="container">
+            <div class="row">                                
+              <div class="span6">
+                <h1 class="animated fadeInDown"><strong>Virtualizační platforma <span class="blue">OpenStack</span></strong></h1>
+                <p class="animated fadeInUp">OpenStack je svobodná technologie pro provoz cloudů typu IaaS (infrastruktura jako služba).</p>
+                <a href="#" class="btn btn-main btn-large animated fadeInUp">
+                  <i class="icon-link"></i> Více informací
+                </a>
+                <a href="#" class="btn btn-main-blue btn-large animated fadeInUp">
+                  <i class="icon-download"></i> Jak začít
+                </a>
               </div>
-            </div>
-          </li>
-          
-          <li>
-            <img src="{{ SITEURL }}/theme/img/header2.png" alt="Title" />
-            <div class="row text-center">
-              <div class="span10 offset1">
-              <h1>Built to look good on all devices. Resize your browser to take a look for yourself.</h1><br />
-              <a class="btn-main" href="about.html">Learn More</a>
+              <div class="span6">
+                <img src="{{ SITEURL }}/static/images/slides/home-header/slide1/openstack-logo.png" alt="" class="animated bounceInDown delay1" />
               </div>
-            </div>
-          </li>
-        </ul>
+            </div>  
+          </div>                                                                                         
+        </div>
+      </div>
       
-      </div><!--End Span12-->
+      <!-- slide 2 here -->
+      <div  data-src="{{ SITEURL }}/static/images/slides/home-header/slide2/background2.jpg">
+        <div class="camera_caption fadeFromLeft">
+          <div class="container">
+            <div class="row"> 
+              <div class="span6">
+                <img class="animated bounceInDown delay1" src="{{ SITEURL }}/static/images/slides/home-header/slide2/newsletter.png" alt="" />
+              </div>                
+              <div class="span6">
+                <h1 class="animated fadeInDown"><strong><span class="blue">Newsletter</span></strong></h1>
+                <p class="animated fadeInUp">Objednejte si pravidelné zasílání aktualit kolem platformy OpenStack.</p>
+                <form> 
+                  <div class="input-append">
+                    <input class="span3 input-large" type="text" placeholder="Zadejte svůj e-mail...">
+                    <button class="btn btn-main btn-large" type="submit">Přihlásit</button>
+                  </div>
+                  <label class="animated fadeInUp"><small>Max. 1x měsíčně</small></label>
+                </form>
+              </div>
+            </div>  
+          </div>                                                                                         
+        </div>
+      </div>
+      
+      <!-- slide 3 here -->
+      <div  data-src="{{ SITEURL }}/static/images/slides/home-header/slide1/background1.jpg">
+        <div class="camera_caption fadeFromLeft">
+          <div class="container">
+            <div class="row">                                
+              <div class="span12 aligncenter">
+                <iframe width="100%" height="100%" src="//www.youtube.com/embed/p4eW78gHfCg" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>  
+          </div>                                                                                         
+        </div>
+      </div>
+
     </div>
   </div>
-</section><!--BxSlider-->
+  <!-- slideshow end here --> 
+</section>

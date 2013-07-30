@@ -17,20 +17,20 @@
       {% include "article_media.html" %}
       <br />
       <h3 class="gray">{{ article.title|title }}</h3>
-      <p class="blue"><small><em>{% include "article_metadata.html" %}</em></small></p>
-      <p class="gray">{{ article.content }}</p>
-      <p class="blue"><small><em>{% include "article_tags.html" %}</em></small></p>
+      <div>{% include "article_metadata.html" %}</div>
+      <div class="gray article-content">{{ article.content }}</div>
+      <div>{% include "article_tags.html" %}</div>
     </div>
   </div>            
 </article>
 
-{% include "widget/twitter.html" %}
+{% include "widgets/twitter.html" %}
 
 {% if DISQUS_SITENAME %}
 <!--Comments-->
 <h2 class="dark-gray margin-30"><i class="icon-comments icon-large"></i> Komentáře</h2>
-{% include "widget/disqus.html" %}
+{% include "widgets/disqus.html" %}
 {% endif %}
 
-{% include "widget/facebook.html" %}
+{% include "widgets/facebook.html" %}
 {% endblock %}
