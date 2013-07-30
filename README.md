@@ -76,8 +76,8 @@ Point your browser to localhost:8000 and you will see website.
 
 Author [Josef Jezek](http://about.me/josefjezek)
 
-This work is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License](http://creativecommons.org/licenses/by-nc-nd/3.0/).
+This work is licensed under a [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/).
 
-Uvedená práce (dílo) podléhá licenci [Creative Commons Uveďte autora-Neužívejte dílo komerčně-Nezasahujte do díla 3.0 Česko](http://creativecommons.org/licenses/by-nc-nd/3.0/cz/).
+Uvedená práce (dílo) podléhá licenci [Creative Commons Uveďte autora 3.0 Unported](http://creativecommons.org/licenses/by/3.0/deed.cs).
 
 Static blog powered by [Pelican](http://docs.getpelican.com), which takes great advantage of [Python](http://python.org). Hosted on [GitHub Pages](http://pages.github.com).
