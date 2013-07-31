@@ -1,9 +1,18 @@
-<form action="{{ GOOGLE_CONTACT_FORM_URL }}" method="POST" id="ss-form" target="_self" onsubmit="" autocomplete="on">
+<form action="{{ GOOGLE_CONTACT_FORM_URL }}" method="POST" id="contact-form" target="iframe-contact-form" onsubmit="" autocomplete="on">
   <input type="text" name="{{ GOOGLE_CONTACT_FORM_NAME }}" value="" class="span8" id="{{ GOOGLE_CONTACT_FORM_NAME }}" dir="auto" aria-required="true" required="" autofocus="" x-autocompletetype="full-name" placeholder="Jméno" />
   <input type="email" name="{{ GOOGLE_CONTACT_FORM_EMAIL }}" value="" class="span8" id="{{ GOOGLE_CONTACT_FORM_EMAIL }}" dir="auto" aria-required="true" required="" x-autocompletetype="email" VCARD_NAME = "vCard.Email" autocomplete="email" placeholder="E-mail" />
   <input type="text" name="{{ GOOGLE_CONTACT_FORM_SUBJECT }}" value="" class="span8" id="{{ GOOGLE_CONTACT_FORM_SUBJECT }}" dir="auto" aria-required="true" required="" placeholder="Předmět" />
   <textarea name="{{ GOOGLE_CONTACT_FORM_MESSAGE }}" rows="8" cols="0" class="span8" id="{{ GOOGLE_CONTACT_FORM_MESSAGE }}" dir="auto" aria-required="true" required="" placeholder="Zpráva"></textarea>
-  <input type="hidden" name="draftResponse" value="[]">
-  <input type="hidden" name="pageHistory" value="0">
-  <p><input type="submit" name="submit" value="Odeslat" id="ss-submit" class="btn-main"></p>
+  <input type="hidden" name="draftResponse" value="[]" />
+  <input type="hidden" name="pageHistory" value="0" />
+  <p><button type="submit" name="submit" id="ss-submit" class="btn-main">Odeslat</button></p>
 </form>
+
+<div id="modal-contact-form" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modal-contact-form-label" aria-hidden="true">
+  <div class="modal-body">
+    <iframe style="width: 510px; height: 230px;" name="iframe-contact-form"></iframe>
+  </div>
+  <div class="modal-footer">
+    <button class="btn-main" data-dismiss="modal" aria-hidden="true">Zavřít</button>
+  </div>
+</div>
