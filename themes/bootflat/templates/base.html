@@ -52,13 +52,22 @@
           <ul class="nav pull-right">
             <li {% if home_on %}class="active"{% endif %}><a href="{{ SITEURL }}">Home</a></li>
             <li {% if blog_on %}class="active"{% endif %}><a href="{{ SITEURL }}/blog.html">Blog</a></li>
+
+            {% if MENUITEMS %}
             {% for title, link in MENUITEMS %}
             <li {% if title == active_page %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ link }}">{{ title }}</a></li>
             {% endfor %}
+            {% endif %}
 
             {% if DISPLAY_PAGES_ON_MENU %}
             {% for p in PAGES %}
             <li {% if page == p %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+            {% endfor %}
+            {% endif %}
+
+            {% if MENUITEMS_EXTERNAL %}
+            {% for title, link in MENUITEMS_EXTERNAL %}
+            <li><a href="{{ link }}" target="_blank">{{ title }}</a></li>
             {% endfor %}
             {% endif %}
             <li {% if about_on %}class="active"{% endif %}><a href="{{ SITEURL }}/about.html">O nás</a></li>

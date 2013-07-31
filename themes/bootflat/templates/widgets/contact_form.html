@@ -1,8 +1,8 @@
 <form action="{{ GOOGLE_CONTACT_FORM_URL }}" method="POST" id="contact-form" target="iframe-contact-form" onsubmit="" autocomplete="on">
-  <input type="text" name="{{ GOOGLE_CONTACT_FORM_NAME }}" value="" class="span8" id="{{ GOOGLE_CONTACT_FORM_NAME }}" dir="auto" aria-required="true" required="" autofocus="" x-autocompletetype="full-name" placeholder="Jméno" />
-  <input type="email" name="{{ GOOGLE_CONTACT_FORM_EMAIL }}" value="" class="span8" id="{{ GOOGLE_CONTACT_FORM_EMAIL }}" dir="auto" aria-required="true" required="" x-autocompletetype="email" VCARD_NAME = "vCard.Email" autocomplete="email" placeholder="E-mail" />
-  <input type="text" name="{{ GOOGLE_CONTACT_FORM_SUBJECT }}" value="" class="span8" id="{{ GOOGLE_CONTACT_FORM_SUBJECT }}" dir="auto" aria-required="true" required="" placeholder="Předmět" />
-  <textarea name="{{ GOOGLE_CONTACT_FORM_MESSAGE }}" rows="8" cols="0" class="span8" id="{{ GOOGLE_CONTACT_FORM_MESSAGE }}" dir="auto" aria-required="true" required="" placeholder="Zpráva"></textarea>
+  <input type="text" name="{{ GOOGLE_CONTACT_FORM_NAME_ID }}" value="" class="span8" id="{{ GOOGLE_CONTACT_FORM_NAME_ID }}" dir="auto" aria-required="true" required="" autofocus="" autocomplete="name" placeholder="Jméno" />
+  <input type="email" name="{{ GOOGLE_CONTACT_FORM_EMAIL_ID }}" value="" class="span8" id="{{ GOOGLE_CONTACT_FORM_EMAIL_ID }}" dir="auto" aria-required="true" required="" autocomplete="email" placeholder="E-mail" />
+  <input type="text" name="{{ GOOGLE_CONTACT_FORM_SUBJECT_ID }}" value="" class="span8" id="{{ GOOGLE_CONTACT_FORM_SUBJECT_ID }}" dir="auto" aria-required="true" required="" placeholder="Předmět" />
+  <textarea name="{{ GOOGLE_CONTACT_FORM_MESSAGE_ID }}" rows="8" cols="0" class="span8" id="{{ GOOGLE_CONTACT_FORM_MESSAGE_ID }}" dir="auto" aria-required="true" required="" placeholder="Zpráva"></textarea>
   <input type="hidden" name="draftResponse" value="[]" />
   <input type="hidden" name="pageHistory" value="0" />
   <p><button type="submit" name="submit" id="ss-submit" class="btn-main">Odeslat</button></p>
