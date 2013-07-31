@@ -1,8 +1,9 @@
-<form method="POST" action="/">
-  <input type="text" class="span8" name="contact_name" placeholder="Jméno">
-  <input type="text" class="span8" name="contact_email" placeholder="E-mail">
-  <input type="text" class="span8" name="contact_subject" placeholder="Předmět">
-  <textarea class="span8" name="contact_message" placeholder="Zpráva"></textarea>
-  <input type="hidden" name="save" value="contact">
-  <p><button class="btn-main" type="submit">Odeslat</button></p>
+<form action="{{ GOOGLE_CONTACT_FORM_URL }}" method="POST" id="ss-form" target="_self" onsubmit="" autocomplete="on">
+  <input type="text" name="{{ GOOGLE_CONTACT_FORM_NAME }}" value="" class="span8" id="{{ GOOGLE_CONTACT_FORM_NAME }}" dir="auto" aria-required="true" required="" autofocus="" x-autocompletetype="full-name" placeholder="Jméno" />
+  <input type="email" name="{{ GOOGLE_CONTACT_FORM_EMAIL }}" value="" class="span8" id="{{ GOOGLE_CONTACT_FORM_EMAIL }}" dir="auto" aria-required="true" required="" x-autocompletetype="email" VCARD_NAME = "vCard.Email" autocomplete="email" placeholder="E-mail" />
+  <input type="text" name="{{ GOOGLE_CONTACT_FORM_SUBJECT }}" value="" class="span8" id="{{ GOOGLE_CONTACT_FORM_SUBJECT }}" dir="auto" aria-required="true" required="" placeholder="Předmět" />
+  <textarea name="{{ GOOGLE_CONTACT_FORM_MESSAGE }}" rows="8" cols="0" class="span8" id="{{ GOOGLE_CONTACT_FORM_MESSAGE }}" dir="auto" aria-required="true" required="" placeholder="Zpráva"></textarea>
+  <input type="hidden" name="draftResponse" value="[]">
+  <input type="hidden" name="pageHistory" value="0">
+  <p><input type="submit" name="submit" value="Odeslat" id="ss-submit" class="btn-main"></p>
 </form>

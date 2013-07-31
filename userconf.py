@@ -13,6 +13,13 @@ FACEBOOK_APPID = ''
 GOOGLE_SITE_SEARCH_URL = 'http://localhost:8000'
 CONTACT_MAP_LOCATION = 'Praha,+Czech'
 
+# Contact form
+GOOGLE_CONTACT_FORM_URL = 'https://docs.google.com/a/jezek.co.cz/forms/d/15yaSGXK4yZGm3D3jeH2_tEm5PE7fhA65OmeezkBjpaM/formResponse'
+GOOGLE_CONTACT_FORM_NAME = 'entry.352057519'
+GOOGLE_CONTACT_FORM_EMAIL = 'entry.162652585'
+GOOGLE_CONTACT_FORM_SUBJECT = 'entry.423243377'
+GOOGLE_CONTACT_FORM_MESSAGE = 'entry.534812453'
+
 # Blogroll
 LINKS = (
     ('OpenStack Blog', 'http://www.openstack.org/blog/'),
