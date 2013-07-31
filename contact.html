@@ -85,15 +85,24 @@
     
     <div class="row">
       <div class="span8">        
-        <form action="https://docs.google.com/a/jezek.co.cz/forms/d/15yaSGXK4yZGm3D3jeH2_tEm5PE7fhA65OmeezkBjpaM/formResponse" method="POST" id="ss-form" target="_self" onsubmit="" autocomplete="on">
+        <form action="https://docs.google.com/a/jezek.co.cz/forms/d/15yaSGXK4yZGm3D3jeH2_tEm5PE7fhA65OmeezkBjpaM/formResponse" method="POST" id="contact-form" target="iframe-contact-form" onsubmit="" autocomplete="on">
   <input type="text" name="entry.352057519" value="" class="span8" id="entry.352057519" dir="auto" aria-required="true" required="" autofocus="" x-autocompletetype="full-name" placeholder="Jméno" />
   <input type="email" name="entry.162652585" value="" class="span8" id="entry.162652585" dir="auto" aria-required="true" required="" x-autocompletetype="email" VCARD_NAME = "vCard.Email" autocomplete="email" placeholder="E-mail" />
   <input type="text" name="entry.423243377" value="" class="span8" id="entry.423243377" dir="auto" aria-required="true" required="" placeholder="Předmět" />
   <textarea name="entry.534812453" rows="8" cols="0" class="span8" id="entry.534812453" dir="auto" aria-required="true" required="" placeholder="Zpráva"></textarea>
-  <input type="hidden" name="draftResponse" value="[]">
-  <input type="hidden" name="pageHistory" value="0">
-  <p><input type="submit" name="submit" value="Odeslat" id="ss-submit" class="btn-main"></p>
-</form>      </div><!--End Span8-->
+  <input type="hidden" name="draftResponse" value="[]" />
+  <input type="hidden" name="pageHistory" value="0" />
+  <p><button type="submit" name="submit" id="ss-submit" class="btn-main">Odeslat</button></p>
+</form>
+
+<div id="modal-contact-form" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modal-contact-form-label" aria-hidden="true">
+  <div class="modal-body">
+    <iframe style="width: 510px; height: 230px;" name="iframe-contact-form"></iframe>
+  </div>
+  <div class="modal-footer">
+    <button class="btn-main" data-dismiss="modal" aria-hidden="true">Zavřít</button>
+  </div>
+</div>      </div><!--End Span8-->
       
       <div class="span4">
         <p class="lead">Side Bar Title<p>
@@ -199,7 +208,7 @@ src="https://maps.google.com/maps?f=q
             adaptiveHeight: false,
             autoControls: false
           }); 
-  });    
+  });
   </script>
 
   </body>
