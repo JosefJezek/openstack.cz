@@ -13,6 +13,9 @@ FACEBOOK_APPID = ''
 GOOGLE_SITE_SEARCH_URL = 'http://localhost:8000'
 CONTACT_MAP_LOCATION = u'Praha,+Czech'
 
+# Email marketing
+MAD_MIMI_WEBFORM_ID = '86486'
+
 # Contact form
 GOOGLE_CONTACT_FORM_URL = 'https://docs.google.com/a/jezek.co.cz/forms/d/15yaSGXK4yZGm3D3jeH2_tEm5PE7fhA65OmeezkBjpaM/formResponse'
 GOOGLE_CONTACT_FORM_NAME_ID = 'entry.352057519'

@@ -25,7 +25,9 @@
 
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap-combined.no-icons.min.css">
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}">
+  {% if CUSTOM_CSS %}
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CUSTOM_CSS }}">
+  {% endif %}
 
   <script src="{{ SITEURL }}/theme/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
@@ -163,5 +165,7 @@
   {% if blog or article %}
   {% include "widgets/disqus_count.html" %}
   {% endif %}
+
+  {% include "widgets/mad_mimi_modal.html" %}
 </body>
 </html>

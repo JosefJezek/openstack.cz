@@ -1,0 +1,9 @@
+{% if MAD_MIMI_WEBFORM_ID %}
+<form action="https://madmimi.com/signups/subscribe/{{ MAD_MIMI_WEBFORM_ID }}" method="post" id="mad-mimi-form" onsubmit="" target="iframe-mad-mimi-form"> 
+  <div class="input-append">
+    <input class="span3 input-large" type="email" name="signup[email]" required="" autocomplete="email" placeholder="Zadejte svůj e-mail...">
+    <button class="btn btn-main btn-large" type="submit">Přihlásit</button>
+  </div>
+  <label class="animated fadeInUp"><small>Max. 1x měsíčně</small></label>
+</form>
+{% endif %}

@@ -3,6 +3,10 @@ $(document).ready(function() {
     $('#modal-contact-form').modal('show');
   });
 
+  $('#mad-mimi-form').submit(function() {
+    $('#modal-mad-mimi-form').modal('show');
+  });
+
   // get the action filter option item on page load
   var $filterType = $('#filterOptions li.active a').attr('class');
   
