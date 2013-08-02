@@ -23,8 +23,8 @@
 
   <link rel="stylesheet" href="http://openstack.cz/theme/css/bootstrap-combined.no-icons.min.css">
   <link rel="stylesheet" href="http://openstack.cz/theme/css/main.css">
-  <link rel="stylesheet" href="http://openstack.cz/theme/css/custom.css">
-
+    <link rel="stylesheet" href="http://openstack.cz/theme/css/custom.css">
+  
   <script src="http://openstack.cz/theme/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
   <!-- Fav and touch icons -->
@@ -112,13 +112,15 @@
               <div class="span6">
                 <h1 class="animated fadeInDown margin-30"><strong><span class="blue">Newsletter</span></strong></h1>
                 <p class="animated fadeInUp margin-50">Objednejte si pravidelné zasílání aktualit kolem platformy OpenStack.</p>
-                <form> 
-                  <div class="input-append">
-                    <input class="span3 input-large" type="text" placeholder="Zadejte svůj e-mail...">
-                    <button class="btn btn-main btn-large" type="submit">Přihlásit</button>
-                  </div>
-                  <label class="animated fadeInUp"><small>Max. 1x měsíčně</small></label>
-                </form>
+
+                <form action="https://madmimi.com/signups/subscribe/86486" method="post" id="mad-mimi-form" onsubmit="" target="iframe-mad-mimi-form"> 
+  <div class="input-append">
+    <input class="span3 input-large" type="email" name="signup[email]" required="" autocomplete="email" placeholder="Zadejte svůj e-mail...">
+    <button class="btn btn-main btn-large" type="submit">Přihlásit</button>
+  </div>
+  <label class="animated fadeInUp"><small>Max. 1x měsíčně</small></label>
+</form>
+                
               </div>
             </div>  
           </div>                                                                                         
@@ -338,5 +340,14 @@
   });
   </script>
 
-  </body>
+  
+  <div id="modal-mad-mimi-form" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modal-mad-mimi-form-label" aria-hidden="true">
+  <div class="modal-body">
+    <iframe width="100%" height="275" name="iframe-mad-mimi-form"></iframe>
+  </div>
+  <div class="modal-footer">
+    <button class="btn-main" data-dismiss="modal" aria-hidden="true">Zavřít</button>
+  </div>
+</div>
+</body>
 </html>
