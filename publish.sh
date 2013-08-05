@@ -6,7 +6,7 @@
 
 MESSAGE=$1
 
-git checkout master
+# git checkout master
 git add .
 git commit -m "$MESSAGE"
 git push origin master
