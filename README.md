@@ -1,5 +1,7 @@
 # openstack.cz [![Gittip](https://raw.github.com/gittip/www.gittip.com/master/img-src/gittip-logo-32.png)](https://www.gittip.com/josefjezek)
 
+[![Join the chat at https://gitter.im/JosefJezek/openstack.cz](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JosefJezek/openstack.cz?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Source of small summary website about Czech (and Slovak) OpenStack community.
 
 ## Status: ACTIVE
